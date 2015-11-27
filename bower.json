@@ -1,0 +1,12 @@
+{
+  "name": "ICA",
+  "version": "0.0.1",
+  "description": "Ready-to-use IWA Angular Components. A collection of directives, factories and services, plus related and standalone style components.",
+  "main": "javascripts/IAC.js",
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "angular": ">=1.3.0",
+    "angular-touch": ">=1.3.0",
+    "normalize": "~1.0.4"
+  }
+}
