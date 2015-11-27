@@ -1,5 +1,7 @@
 **ICA - ready-to-use Iwa Angular Components**
 
+(this repo is work in progress)
+
 This is a collection of Angular components by Iwa Labs, which composes of directives, services and factories.
 
 The styles are included where applicable, and there's also some standalone style components that are released in this package just for convinience.
