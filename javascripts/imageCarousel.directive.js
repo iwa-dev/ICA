@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('IAC')
+    .module('ICA')
     .directive('imageCarousel', ['$timeout',function($timeout) {
       return {
         scope: {
@@ -118,11 +118,11 @@
         '<div class="image_carousel__frame">' +
         '   <div class="image_carousel__album" ng-swipe-left="config.allowSwipe && incSelectedIndex(1); $event.stopPropagation();" ng-swipe-right="config.allowSwipe && incSelectedIndex(-1); $event.stopPropagation();"' +
         '       ng-class="{\'image_carousel__album--offset_forward\': animation.armed && !animation.reverse, \'image_carousel__album--offset_backward\': animation.armed && animation.reverse, \'image_carousel__album--scroll_forward\': animation.active && !animation.reverse, \'image_carousel__album--scroll_backward\': animation.active && animation.reverse}">' +
-        '       <div class="image_carousel__item" ' +
+        '       <image-carousel-item class="image_carousel__item" ' +
         '           ng-repeat="item in currentItems" ' +
         '           ng-class="{\'image_carousel__item--selected\': item.index == 0 && !animation.armed || item.index == -1 && animation.armed && !animation.reverse || item.index == 1 && animation.armed && animation.reverse, \'image_carousel__item--scroll\': animation.active}" ' +
         '       >' +
-        '           <div ng-if="animation.armed && animation.reverse || !animation.reverse && animation.active || !animation.armed && animation.active && item.index == 1 || !animation.armed && animation.reverse && !animation.active && item.index == -1 || !animation.armed && item.index == 0 || animation.armed && !animation.reverse && item.index == -1" image-carousel-item get-content="getItemContent"></div>' +
+        '           <image-carousel-item class="image_carousel__item_content" get-content="getItemContent" ng-if="animation.armed && animation.reverse || !animation.reverse && animation.active || !animation.armed && animation.active && item.index == 1 || !animation.armed && animation.reverse && !animation.active && item.index == -1 || !animation.armed && item.index == 0 || animation.armed && !animation.reverse && item.index == -1"></image-carousel-item>' +
         '       <div>' +
         '   </div>' +
         '</div>'
@@ -134,7 +134,7 @@
           getContent: "="
         },
         link: function(scope,element) {
-          scope.getContent(scope.$parent,function(content) {
+          scope.getContent && scope.getContent(scope.$parent,function(content) {
             element.html(content);
           });
         }

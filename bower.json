@@ -1,8 +1,8 @@
 {
   "name": "ICA",
   "version": "0.0.1",
-  "description": "Ready-to-use IWA Angular Components. A collection of directives, factories and services, plus related and standalone style components.",
-  "main": "javascripts/IAC.js",
+  "description": "Ready-to-use IWA Components for Angular. A collection of directives, factories and services, plus related and standalone style components.",
+  "main": "javascripts/ICA.js",
   "ignore": [
     "bower.json"
   ],

@@ -1,4 +1,4 @@
-**ICA - ready-to-use Iwa Angular Components**
+**ICA - ready-to-use Iwa Components for Angular**
 
 (this repo is work in progress)
 
@@ -8,14 +8,14 @@ The styles are included where applicable, and there's also some standalone style
 
 While the styles are just CSS, the Angular components require certain include/load order, and sometimes depend on each other.
 
-The most important thing, however, is to always include/load the IAC.js before anything else, as that creates the "IAC" Angular module the other files refer to. 
+The most important thing, however, is to always include/load the ICA.js before anything else, as that creates the "ICA" Angular module the other files refer to. 
 
-To use, include the "IAC" as a dependency in your app's module definition, like:
+To use, include the "ICA" as a dependency in your app's module definition, like:
 
-`angular.module('myAngularApp', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ngRoute','IAC']);
+`angular.module('myAngularApp', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ngRoute','ICA']);
 `
 
-(just use whatever angular modules you actually need, the point of the example is the IAC in the mix)
+(just use whatever angular modules you actually need, the point of the example is the ICA in the mix)
 
 
 

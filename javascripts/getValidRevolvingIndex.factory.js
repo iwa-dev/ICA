@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('IAC')
+    .module('ICA')
 
     //ensures no-overflow "get next index" kind of thing, simply returns first item after last item etc
     .factory('GetValidRevolvingIndex', [function () {
