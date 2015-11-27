@@ -134,7 +134,7 @@
           getContent: "="
         },
         link: function(scope,element) {
-          scope.getContent(scope.$parent,function(content) {
+          scope.getContent && scope.getContent(scope.$parent,function(content) {
             element.html(content);
           });
         }
