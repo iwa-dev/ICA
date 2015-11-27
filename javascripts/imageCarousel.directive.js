@@ -122,7 +122,7 @@
         '           ng-repeat="item in currentItems" ' +
         '           ng-class="{\'image_carousel__item--selected\': item.index == 0 && !animation.armed || item.index == -1 && animation.armed && !animation.reverse || item.index == 1 && animation.armed && animation.reverse, \'image_carousel__item--scroll\': animation.active}" ' +
         '       >' +
-        '           <image-carousel-item class="image_carousel__item_content" get-content="getItemContent" ng-if="animation.armed && animation.reverse || !animation.reverse && animation.active || !animation.armed && animation.active && item.index == 1 || !animation.armed && animation.reverse && !animation.active && item.index == -1 || !animation.armed && item.index == 0 || animation.armed && !animation.reverse && item.index == -1"></image-carousel-item>' +
+        '           <div ng-if="animation.armed && animation.reverse || !animation.reverse && animation.active || !animation.armed && animation.active && item.index == 1 || !animation.armed && animation.reverse && !animation.active && item.index == -1 || !animation.armed && item.index == 0 || animation.armed && !animation.reverse && item.index == -1" image-carousel-item get-content="getItemContent"></div>' +
         '       <div>' +
         '   </div>' +
         '</div>'
