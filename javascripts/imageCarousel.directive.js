@@ -118,7 +118,7 @@
         '<div class="image_carousel__frame">' +
         '   <div class="image_carousel__album" ng-swipe-left="config.allowSwipe && incSelectedIndex(1); $event.stopPropagation();" ng-swipe-right="config.allowSwipe && incSelectedIndex(-1); $event.stopPropagation();"' +
         '       ng-class="{\'image_carousel__album--offset_forward\': animation.armed && !animation.reverse, \'image_carousel__album--offset_backward\': animation.armed && animation.reverse, \'image_carousel__album--scroll_forward\': animation.active && !animation.reverse, \'image_carousel__album--scroll_backward\': animation.active && animation.reverse}">' +
-        '       <image-carousel-item class="image_carousel__item" ' +
+        '       <div class="image_carousel__item" ' +
         '           ng-repeat="item in currentItems" ' +
         '           ng-class="{\'image_carousel__item--selected\': item.index == 0 && !animation.armed || item.index == -1 && animation.armed && !animation.reverse || item.index == 1 && animation.armed && animation.reverse, \'image_carousel__item--scroll\': animation.active}" ' +
         '       >' +
@@ -134,7 +134,7 @@
           getContent: "="
         },
         link: function(scope,element) {
-          scope.getContent && scope.getContent(scope.$parent,function(content) {
+          scope.getContent(scope.$parent,function(content) {
             element.html(content);
           });
         }
