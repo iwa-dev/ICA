@@ -19,5 +19,6 @@ To use, include the "ICA" as a dependency in your app's module definition, like:
 
 
 
-When including just some directive, for example, simply check if it depends on something, like a service. If it does, a file with a similar name is included in this package. Include/load it before the directive and everything works fine.
+When including just some directive, for example, simply check if it depends on something, like a service. If it does, a file with a similar name is included in this package. 
+Include/load it before the directive and everything works fine.
 
