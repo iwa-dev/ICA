@@ -35,11 +35,11 @@
 
 .image_carousel__album--scroll_forward,
 .image_carousel__album--scroll_backward {
-  -webkit-transition: "-webkit-transform" ease-in-out 0.4s;
-  -moz-transition: "-moz-transform" ease-in-out 0.4s;
-  -o-transition: "-o-transform" ease-in-out 0.4s;
-  -ms-transition: "-ms-transform" ease-in-out 0.4s;
-  transition: "transform" ease-in-out 0.4s; }
+  -webkit-transition: -webkit-transform ease-in-out 0.4s;
+  -moz-transition: -moz-transform ease-in-out 0.4s;
+  -o-transition: -o-transform ease-in-out 0.4s;
+  -ms-transition: -ms-transform ease-in-out 0.4s;
+  transition: transform ease-in-out 0.4s; }
 
 .image_carousel__album--offset_forward {
   -webkit-transform: translateX(0) scale(1);
@@ -101,11 +101,11 @@
     height: auto; }
 
 .image_carousel__item--scroll {
-  -webkit-transition: "-webkit-transform" ease-in-out 0.4s;
-  -moz-transition: "-moz-transform" ease-in-out 0.4s;
-  -o-transition: "-o-transform" ease-in-out 0.4s;
-  -ms-transition: "-ms-transform" ease-in-out 0.4s;
-  transition: "transform" ease-in-out 0.4s; }
+  -webkit-transition: -webkit-transform ease-in-out 0.4s;
+  -moz-transition: -moz-transform ease-in-out 0.4s;
+  -o-transition: -o-transform ease-in-out 0.4s;
+  -ms-transition: -ms-transform ease-in-out 0.4s;
+  transition: transform ease-in-out 0.4s; }
 
 .image_carousel__frame:not(.image_carousel__frame--triple_mode) > .image_carousel__album {
   -webkit-transform: translateX(0) scale(1);
