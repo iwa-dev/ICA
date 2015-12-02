@@ -88,11 +88,11 @@
   white-space: normal;
   padding: 0px; }
   .image_carousel__item:not(.image_carousel__item--selected) {
-    -webkit-transform: scale(0.90909);
-    -moz-transform: scale(0.90909);
-    -o-transform: scale(0.90909);
-    -ms-transform: scale(0.90909);
-    transform: scale(0.90909); }
+    -webkit-transform: scale(0.1);
+    -moz-transform: scale(0.1);
+    -o-transform: scale(0.1);
+    -ms-transform: scale(0.1);
+    transform: scale(0.1); }
 
 .image_carousel__item_content {
   width: 100%; }
