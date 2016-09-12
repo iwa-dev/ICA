@@ -1,0 +1,100 @@
+@charset "UTF-8";
+/*relevant mixins*/
+/*-----------------*/
+/*variable declarations*/
+/*default icon unicode for expand/collapse*/
+/*-----------------*/
+/* animation keyframes */
+@keyframes collapse {
+  from {
+    height: auto; }
+  to {
+    height: 0px; } }
+
+.collapse {
+  position: relative; }
+
+.collapse__state {
+  position: absolute;
+  left: 9999px;
+  visibility: hidden; }
+
+.collapse__trigger[data-expand]:before {
+  content: attr(data-expand); }
+
+.collapse__trigger {
+  display: block;
+  position: relative;
+  padding-left: 1.5em; }
+  .collapse__trigger:before {
+    content: "▽";
+    position: absolute;
+    top: 50%;
+    left: 0.5em;
+    transform: translateX(-50%) translateY(-50%);
+    color: #a30000; }
+  .collapse__trigger label {
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer; }
+
+.collapse__item {
+  overflow: hidden; }
+
+.collapse__text {
+  transition: transform, opacity;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out; }
+
+.collapse:not(.collapse--manual) .collapse__state--init:not(:checked) ~ .collapse__trigger label:last-child {
+  display: none; }
+
+.collapse:not(.collapse--manual) .collapse__state--init:not(:checked) ~ .collapse__item {
+  height: 0px; }
+
+.collapse:not(.collapse--manual) .collapse__state--init:not(:checked) ~ .collapse__text {
+  transform: translateY(-100%);
+  opacity: 0; }
+
+.collapse__state--init:checked ~ .collapse__trigger label:first-child,
+.collapse--manual .collapse__trigger label:first-child {
+  display: none; }
+
+.collapse--manual.open .collapse__trigger[data-expand]:before, .collapse__state--init:checked ~ .collapse__state:not(.collapse__state--init):not(:checked) ~ .collapse__trigger[data-expand]:before,
+.collapse--manual .collapse__state:not(.collapse__state--init):not(:checked) ~ .collapse__trigger[data-expand]:before {
+  content: attr(data-collapse); }
+
+.collapse--manual.open .collapse__trigger:before, .collapse__state--init:checked ~ .collapse__state:not(.collapse__state--init):not(:checked) ~ .collapse__trigger:before,
+.collapse--manual .collapse__state:not(.collapse__state--init):not(:checked) ~ .collapse__trigger:before {
+  content: "△"; }
+
+.collapse--manual.open .collapse__item, .collapse__state--init:checked ~ .collapse__state:not(.collapse__state--init):not(:checked) ~ .collapse__item,
+.collapse--manual .collapse__state:not(.collapse__state--init):not(:checked) ~ .collapse__item {
+  height: auto; }
+
+.collapse--manual.open .collapse__text, .collapse__state--init:checked ~ .collapse__state:not(.collapse__state--init):not(:checked) ~ .collapse__text,
+.collapse--manual .collapse__state:not(.collapse__state--init):not(:checked) ~ .collapse__text {
+  transform: translateY(0%);
+  opacity: 1; }
+
+.collapse--manual:not(.open) .collapse__trigger[data-collapse]:before, .collapse__state--init:checked ~ .collapse__state:not(.collapse__state--init):checked ~ .collapse__trigger[data-collapse]:before,
+.collapse--manual .collapse__state:not(.collapse__state--init):checked ~ .collapse__trigger[data-collapse]:before {
+  content: attr(data-expand); }
+
+.collapse--manual:not(.open) .collapse__trigger:before, .collapse__state--init:checked ~ .collapse__state:not(.collapse__state--init):checked ~ .collapse__trigger:before,
+.collapse--manual .collapse__state:not(.collapse__state--init):checked ~ .collapse__trigger:before {
+  content: "▽"; }
+
+.collapse--manual:not(.open) .collapse__item, .collapse__state--init:checked ~ .collapse__state:not(.collapse__state--init):checked ~ .collapse__item,
+.collapse--manual .collapse__state:not(.collapse__state--init):checked ~ .collapse__item {
+  height: 0px;
+  animation: collapse 0.4s steps(1, end) forwards; }
+
+.collapse--manual:not(.open) .collapse__text, .collapse__state--init:checked ~ .collapse__state:not(.collapse__state--init):checked ~ .collapse__text,
+.collapse--manual .collapse__state:not(.collapse__state--init):checked ~ .collapse__text {
+  transform: translateY(-100%);
+  opacity: 0; }
