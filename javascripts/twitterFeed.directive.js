@@ -52,7 +52,14 @@
           loadTwitter($window);
 
           //if twitter is present and we have the ids, try to get embedded tweets and render
-          if(twttr && scope.tweetIds) {
+          if($window.twttr && scope.tweetIds) {
+
+            //create a promise which is resolved when twitter has readied itself
+            var twitterReady = $q.defer();
+
+            $window.twttr.ready(function(twttr) {
+              twitterReady.resolve(twttr);
+            });
 
             $q.all(scope.tweetIds.map(function(tweetId) {
               return $http.jsonp(
@@ -72,7 +79,7 @@
               scope.state.current = scope.state.options.rendering;
 
               //take into account twttr may not be ready yet, so bind events and render only when ready
-              $window.twttr.ready(function(twttr) {
+              twitterReady.promise.then(function(twttr) {
 
                 //hook into twitter rendering event
                 twttr.events.bind('rendered', function(event) {
